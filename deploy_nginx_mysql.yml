@@ -1,0 +1,43 @@
+---
+- name: Deploy Nginx and MySQL on CentOS/Ubuntu
+  hosts: web  # 指定主机组
+  become: yes  # 以root运行
+  tasks:
+    - name: Update package cache
+      package:
+        name: '*'
+        state: latest
+
+    - name: Install Nginx
+      package:
+        name: nginx
+        state: present
+
+    - name: Start Nginx service
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Install MySQL
+      package:
+        name: mysql-server for CentOS 
+        state: present
+
+    - name: Start MySQL service
+      service:
+        name: mysql  
+        state: started
+        enabled: yes
+
+    - name: Secure MySQL installation (optional)
+      command: mysql_secure_installation
+      args:
+        stdin: |
+          y
+          password
+          password
+          y
+          y
+          y
+          y
