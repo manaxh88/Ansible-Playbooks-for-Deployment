@@ -6,13 +6,8 @@ Ansible 自动化部署与配置管理
 
 ## 主要 Playbook  
 - **deploy_nginx_mysql.yml**  
-  功能：在 CentOS/Ubuntu 上批量安装 Nginx + MySQL（MariaDB），启动服务并简单安全加固。  
+  功能：在 CentOS/Ubuntu 上批量安装 Nginx + MySQL，启动服务并简单安全加固。  
   支持主机组批量执行。
-
-- **其他扩展**（可自行添加）  
-  - 批量配置防火墙  
-  - 统一 SSH 密钥分发  
-  - 应用版本回滚
 
 ## 适用场景  
 - 多节点集群快速部署  
